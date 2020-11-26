@@ -94,6 +94,8 @@ request body:
 ```
 {
 form: formId,
+user_name: string,
+user_email: string,
 answers: [
   {
     question: questionId,
@@ -109,6 +111,8 @@ FormResponseObject
 {
 id: int,
 form: int,
+user_name: string,
+user_email: string,
 answers: [
   {
     id: int,
@@ -154,7 +158,9 @@ choice_text: string
 {
 id: int,
 form: int,
-answers: FormAnswerObject[]
+answers: FormAnswerObject[],
+user_name: string,
+user_email: string
 }
 ```
 

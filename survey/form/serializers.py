@@ -64,6 +64,8 @@ class ResponseSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'form',
+            'user_name',
+            'user_email',
             'answers',
         ]
 

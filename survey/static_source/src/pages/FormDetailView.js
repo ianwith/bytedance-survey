@@ -9,6 +9,8 @@ import QuestionDetail from '../components/QuestionDetail'
 export default function FormDetailView() {
   const { id } = useParams()
   const [formData, setFormData] = useState()
+  const [userName, setUserName] = useState('')
+  const [userEmail, setUserEmail] = useState('')
   const [answers, setAnswers] = useState([])
   const [answered, setAnswered] = useState(false)
   useEffect(() => {
@@ -35,15 +37,27 @@ export default function FormDetailView() {
     setAnswers(newAnswers)
   }
 
+  const handleUserNameChange = (e) => {
+    setUserName(e.target.value)
+  }
+
+  const handleUserEmailChange = (e) => {
+    setUserEmail(e.target.value)
+  }
+
   const onSubmit = () => {
     console.log(answers)
     post(`responses/`, {
       form: id,
+      user_name: userName,
+      user_email: userEmail,
       answers
     })
       .then(data => {
         setAnswered(true)
         setAnswers(data.answers)
+        setUserName(data.user_name)
+        setUserEmail(data.user_email)
       })
       .catch(error => {
         console.log(error)
@@ -85,6 +99,38 @@ export default function FormDetailView() {
               })
             }
           </ul>
+        </section>
+
+        <section>
+          { answered ? (
+            <div>
+              Answer by {userName},
+              contact email {userEmail}
+            </div>
+          ) : (
+            <>
+              <label>
+                Tell us your name:
+                <input
+                  value={userName}
+                  onChange={handleUserNameChange}
+                  placeholder="Input your name"
+                  type="text"
+                  name="user_name"
+                />
+              </label>
+              <label>
+                Tell us your email:
+                <input
+                  value={userEmail}
+                  onChange={handleUserEmailChange}
+                  placeholder="Input your email"
+                  type="text"
+                  name="user_email"
+                />
+              </label>
+            </>
+          ) }
         </section>
         { answered ? null : (
           <Button type="primary" block onClick={onSubmit}>Submit answer</Button>

@@ -22,7 +22,8 @@ class Choice(models.Model):
 
 class FormResponse(models.Model):
     form = models.ForeignKey(Form, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_name = models.CharField(max_length=100, default="")
+    user_email = models.CharField(max_length=100, default="")
 
 class Answer(models.Model):
     response = models.ForeignKey(FormResponse,  related_name='answers', on_delete=models.CASCADE)
