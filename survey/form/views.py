@@ -16,28 +16,6 @@ from .models import Form, Question, FormResponse
 from .serializers import FormSerializer, QuestionSerializer, ResponseSerializer
 
 
-# @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# def question_create_view(request, *args, **kwargs):
-#     print(request.POST)
-#     serializer = FormSerializer(data=request.POST)
-
-#     if serializer.is_valid(raise_exception=True):
-#         print(serializer.validated_data)
-#         serializer.save(author=request.user)
-#         return Response(serializer.data)
-#     return Response({}, status=400)
-
-
-def form_view(request, form_id):
-    form = get_object_or_404(Form, pk=form_id)
-    return render(request, 'form/detail.html', {'form': form})
-
-def question_view(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'question/detail.html', {'question': question})
-
-
 @login_required
 def form_create_view(request):
     return render(request, 'react_copy.html')
