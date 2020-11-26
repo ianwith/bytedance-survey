@@ -1,0 +1,14 @@
+label {
+  display: block;
+  margin: 10px;
+}
+
+.FormCreation--title {
+  font-size: 18px;
+  margin: 10px;
+}
+
+.FormCreation-submit {
+  text-align: right;
+  margin: 20px;
+}

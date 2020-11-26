@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+User Page
+{% endblock %}
+
+{% block head %}
+<style>
+  label,
+  input {
+    display: block;
+  }
+
+  span.helptext {
+    display: none;
+  }
+
+  .User-content {
+    margin: 20px auto;
+    max-width: 650px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="User-content">
+{% block user_content %}
+{% endblock %}
+</section>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'user_base.html' %}
+
+{% block user_content %}
+Hello, {{ user.username|default:'Guest' }}!
+
+
+<a href="{% url 'form_list' %}">Go to forms</a>
+{% endblock %}

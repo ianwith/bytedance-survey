@@ -1,0 +1,14 @@
+.Form--header {
+  border: 1px solid #dadce0;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.Form--title {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.Form--description {
+  font-size: 14px;
+}
