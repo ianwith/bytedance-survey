@@ -12,7 +12,7 @@ export default function FormDetailView() {
   const [answers, setAnswers] = useState([])
   const [answered, setAnswered] = useState(false)
   useEffect(() => {
-    get(`form/${id}`)
+    get(`forms/${id}`)
       .then(data => {
         setFormData(data)
       })
@@ -37,7 +37,7 @@ export default function FormDetailView() {
 
   const onSubmit = () => {
     console.log(answers)
-    post(`response/`, {
+    post(`responses/`, {
       form: id,
       answers
     })

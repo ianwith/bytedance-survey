@@ -10,7 +10,7 @@ export default function FormListView() {
   let { url, path } = useRouteMatch()
   const [forms, setForms] = useState([])
   useEffect(() => {
-    get('form/')
+    get('forms/')
       .then(data => {
         setForms(data)
       })

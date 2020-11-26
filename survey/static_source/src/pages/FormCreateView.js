@@ -14,7 +14,7 @@ export default function FormCreateView() {
   const history = useHistory()
   const handleSubmit = (e) => {
     e.preventDefault()
-    post('form/', {
+    post('forms/', {
       title,
       description,
       questions

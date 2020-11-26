@@ -3,9 +3,9 @@ from django.views.generic import TemplateView
 from form.views import question_view, form_view, form_create_view, FormView, ResponseView
 
 urlpatterns = [
-    path('api/form/', FormView.as_view({'get': 'list', 'post': 'create'})),
-    path('api/form/<int:pk>', FormView.as_view({'get': 'retrieve'})),
-    path('api/response/', ResponseView.as_view({'post': 'create'})),
+    path('api/forms/', FormView.as_view({'get': 'list', 'post': 'create'})),
+    path('api/forms/<int:pk>', FormView.as_view({'get': 'retrieve'})),
+    path('api/responses/', ResponseView.as_view({'post': 'create'})),
     # path('forms/questions/<int:question_id>', question_view),
     # path('forms/<int:form_id>', form_view),
     # path('forms/', form_list_view),
