@@ -19,6 +19,9 @@ python manage.py runserver
 
 ## Docs
 
+### Database
+![EM](./EM.png)
+
 ### APIs
 
 #### GET survey_form/api/forms/
