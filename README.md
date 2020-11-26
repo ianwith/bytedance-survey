@@ -20,7 +20,7 @@ python manage.py runserver
 ## Docs
 
 ### Database
-![EM](./EM.png)
+![EM](./EM.svg)
 
 ### APIs
 
@@ -32,12 +32,14 @@ response:
 
 FormObject[]
 ```
-[{
+[
+{
 id: int,
 title: string,
 description: string,
 questions: QuestionObject[]
-}]
+}
+]
 ```
 
 #### POST survey_form/api/forms/
@@ -170,8 +172,8 @@ user_email: string
 ### FormAnswerObject
 ```
 {
-  id: int,
-  question: int,
-  choice: int
+id: int,
+question: int,
+choice: int
 }
 ```
